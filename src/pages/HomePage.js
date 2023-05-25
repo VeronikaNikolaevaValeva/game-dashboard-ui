@@ -10,7 +10,7 @@ import Alert from 'react-bootstrap/Alert';
 import qandamanager from "../managers/q-and-a-manager";
 import userManager from "../managers/user-manager";
 import { useAuth0 } from "@auth0/auth0-react";
-import Loading from "../building_blocks/components/Loading";
+
 
 function HomePage() {
   const [accountEmailAddress, setAccountEmailAddress] = useState(" ")
@@ -26,7 +26,6 @@ function HomePage() {
   const [processedAccount, setProcessedAccount] = useState(" ")
   const [submitResponse, setSubmitResponse] = useState(false)
   const { getAccessTokenSilently, user } = useAuth0();
-  const [loading, setLoading] = useState(false);
     
   const populateCategories = async () => {
     const token = await getAccessTokenSilently();

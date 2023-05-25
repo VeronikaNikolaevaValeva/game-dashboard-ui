@@ -4,13 +4,11 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
-import Loading from "./Loading"
 
 function QuizQuestionsForm(props) {
   const [questions, setQuestions] = useState([' ']);
   const [returnData, setReturnData] = useState([' ']);
   const [givenAnswers, setGivenAnswers] = useState([' ']);
-  const [loading, setLoading] = useState(false);
   if(questions[0] == [' '] ){
     const qData = []
     const returndata = []
@@ -74,71 +72,63 @@ function QuizQuestionsForm(props) {
     props.handleQuestionCallback(data, givenAnswers);
   }
  
-  {(() => {
-    if (loading) {
-      return (
-        <Loading />
-      )
-    } else {
-      return (
-        <>
-          <Container>
-            <Row>
-              <Form onSubmit={submitQuestions}>
-                <fieldset>
-                  {questions.map(item => (
-                    <Card style={{marginTop: "1rem", paddingLeft: "1rem", paddingRight: "1rem"}} 
-                          border="info" 
-                          className="bg-dark text-white d-flex align-items-stretch">
-                      <Card.Title class="d-flex justify-content-center"
-                                  style={{ paddingTop: "1rem" }}>
-                                   {item[0]}
-                      </Card.Title>
-                      <Card.Body>
-                        <Form  onChange={submitAnswer}>
-                         <Form.Check
-                              type="radio"
-                              label={item[1]}
-                              name="formHorizontalRadios"
-                              id={[item[5], item[1]]}
-                          />    
-                          <Form.Check
-                              type="radio"
-                              label={item[2]}
-                              name="formHorizontalRadios"
-                              id={[item[5], item[2]]}
-                          />
-                          <Form.Check
-                              type="radio"
-                              label={item[3]}
-                              name="formHorizontalRadios"
-                              id={[item[5], item[3]]}
-    
-                          />
-                          <Form.Check
-                            type="radio"
-                            label={item[4]}
-                            name="formHorizontalRadios"
-                            id={[item[5], item[4]]}
-                          /> 
-                        </Form> 
-                      </Card.Body>
-                    </Card>
-                    ))}
-                </fieldset>
-                <Form.Group as={Row} className="mb-3">
-                  <div class="d-flex justify-content-center">
-                    <Button onClick={submitQuestions} style={{marginTop: "1rem"}} size="lg" variant="outline-warning">
-                      Submit
-                    </Button>
-                  </div>
-                </Form.Group>
-              </Form>
-            </Row>
-          </Container>
-        </>
-      );
-    }
-  })()}
+  return (
+    <>
+      <Container>
+        <Row>
+          <Form onSubmit={submitQuestions}>
+            <fieldset>
+              {questions.map(item => (
+                <Card style={{marginTop: "1rem", paddingLeft: "1rem", paddingRight: "1rem"}} 
+                      border="info" 
+                      className="bg-dark text-white d-flex align-items-stretch">
+                  <Card.Title class="d-flex justify-content-center"
+                              style={{ paddingTop: "1rem" }}>
+                               {item[0]}
+                  </Card.Title>
+                  <Card.Body>
+                    <Form  onChange={submitAnswer}>
+                     <Form.Check
+                          type="radio"
+                          label={item[1]}
+                          name="formHorizontalRadios"
+                          id={[item[5], item[1]]}
+                      />    
+                      <Form.Check
+                          type="radio"
+                          label={item[2]}
+                          name="formHorizontalRadios"
+                          id={[item[5], item[2]]}
+                      />
+                      <Form.Check
+                          type="radio"
+                          label={item[3]}
+                          name="formHorizontalRadios"
+                          id={[item[5], item[3]]}
+
+                      />
+                      <Form.Check
+                        type="radio"
+                        label={item[4]}
+                        name="formHorizontalRadios"
+                        id={[item[5], item[4]]}
+                      /> 
+                    </Form> 
+                  </Card.Body>
+                </Card>
+                ))}
+            </fieldset>
+            <Form.Group as={Row} className="mb-3">
+              <div class="d-flex justify-content-center">
+                <Button onClick={submitQuestions} style={{marginTop: "1rem"}} size="lg" variant="outline-warning">
+                  Submit
+                </Button>
+              </div>
+            </Form.Group>
+          </Form>
+        </Row>
+      </Container>
+    </>
+  );
 }
 export default QuizQuestionsForm;
