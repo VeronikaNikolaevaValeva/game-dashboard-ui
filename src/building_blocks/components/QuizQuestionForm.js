@@ -11,6 +11,9 @@ function QuizQuestionsForm(props) {
   const [returnData, setReturnData] = useState([' ']);
   const [givenAnswers, setGivenAnswers] = useState([' ']);
   const [loading, setLoading] = useState(false);
+  if(loading){
+    return <Loading />;
+  }
   if(questions[0] == [' '] ){
     const qData = []
     const returndata = []
@@ -74,10 +77,7 @@ function QuizQuestionsForm(props) {
     console.log(data);
     props.handleQuestionCallback(data, givenAnswers);
   }
-  if(loading){
-    return <Loading />;
-  }
-  else{
+  
   return (
     <>
       <Container>
@@ -127,7 +127,7 @@ function QuizQuestionsForm(props) {
             <Form.Group as={Row} className="mb-3">
               <div class="d-flex justify-content-center">
                 <Button onClick={submitQuestions} style={{marginTop: "1rem"}} size="lg" variant="outline-warning">
-                  Submit
+                  Submit answers
                 </Button>
               </div>
             </Form.Group>
@@ -136,7 +136,6 @@ function QuizQuestionsForm(props) {
       </Container>
     </>
   );
-}
 }
 
 export default QuizQuestionsForm;
