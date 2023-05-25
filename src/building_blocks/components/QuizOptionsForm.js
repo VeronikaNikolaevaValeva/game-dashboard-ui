@@ -78,7 +78,7 @@ function QuizOptionsForm(props) {
                 Categories
               </Form.Label>
               <Col sm={10}>
-              <Form.Select value={preDefinedCategory} onClick={handleCategoryList} onChange={handleCategory} aria-label="Default select example">
+              <Form.Select placeholder={"Choose a category"} value={preDefinedCategory} onClick={handleCategoryList} onChange={handleCategory} aria-label="Default select example">
                 {list.map(item => (
                   <option value={item} >{item}</option>
                 ))}
