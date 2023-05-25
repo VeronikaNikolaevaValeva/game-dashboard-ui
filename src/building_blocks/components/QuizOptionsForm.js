@@ -8,7 +8,6 @@ import Container from "react-bootstrap/Container";
 function QuizOptionsForm(props) {
   const [list, setList] = useState([' ']);
   const [category, setCategory] = useState(['']);
-  const [preDefinedCategory, setPreDefinedCategory] = useState(props.categories[0].categoryName);
   const [amount, setAmount] = useState(1);
   const [difficulty, setDifficulty] = useState("easy");
   const [preferences, setPreferences] = useState(false);
@@ -49,9 +48,9 @@ function QuizOptionsForm(props) {
     setDifficulty(e.target.id);
   }
 
-  const handlePreferences = (e) => {
-    setPreferences(e.target.checked);
-  }
+  // const handlePreferences = (e) => {
+  //   setPreferences(e.target.checked);
+  // }
 
   const handleSaveChanges = (e) => {
     var data = JSON.stringify({
