@@ -15,9 +15,6 @@ function QuizOptionsForm(props) {
  const populateGameOptions = async () => {
     if(props.preDefinedGameOptions != " "){
         setAmount(props.preDefinedGameOptions.amount);
-        if(props.preDefinedGameOptions.category != null){
-          setPreDefinedCategory(props.preDefinedGameOptions.category);
-        }
         setDifficulty(props.preDefinedGameOptions.difficulty);
         setPreferences(true);
     }
@@ -37,7 +34,6 @@ function QuizOptionsForm(props) {
 
   const handleCategory = (e) => {
     setCategory(e.target.value);
-    setPreDefinedCategory(e.target.value);
   }
 
   const handleAmount = (e) => {
