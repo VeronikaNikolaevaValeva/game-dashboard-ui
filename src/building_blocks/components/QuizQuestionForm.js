@@ -64,6 +64,7 @@ function QuizQuestionsForm(props) {
   }
 
   function submitQuestions(){
+    setLoading(true);
     var data = JSON.stringify({
       "accountEmailAddress": props.accountEmailAddress,
       "category": props.category,
@@ -125,7 +126,7 @@ function QuizQuestionsForm(props) {
             </fieldset>
             <Form.Group as={Row} className="mb-3">
               <div class="d-flex justify-content-center">
-                <Button onClick={[submitQuestions, setLoading(true)]} style={{marginTop: "1rem"}} size="lg" variant="outline-warning">
+                <Button onClick={submitQuestions} style={{marginTop: "1rem"}} size="lg" variant="outline-warning">
                   Submit
                 </Button>
               </div>

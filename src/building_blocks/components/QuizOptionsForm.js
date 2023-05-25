@@ -78,7 +78,7 @@ function QuizOptionsForm(props) {
                 Categories
               </Form.Label>
               <Col sm={10}>
-              <Form.Select placeholder={"Choose a category"} value={preDefinedCategory} onClick={handleCategoryList} onChange={handleCategory} aria-label="Default select example">
+              <Form.Select placeholder={"Choose a category"} onClick={handleCategoryList} onChange={handleCategory} aria-label="Default select example">
                 {list.map(item => (
                   <option value={item} >{item}</option>
                 ))}
@@ -126,7 +126,7 @@ function QuizOptionsForm(props) {
                 </Col>
               </Form.Group>
             </fieldset>
-            <Form.Group
+            {/* <Form.Group
               as={Row}
               className="mb-3"
               controlId="formHorizontalCheck"
@@ -134,7 +134,7 @@ function QuizOptionsForm(props) {
               <Col sm={{ span: 10, offset: 2 }}>
                 <Form.Check checked={preferences} onChange={handlePreferences} label="Remember my preferences" />
               </Col>
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group as={Row} className="mb-3">
               <div class="d-flex justify-content-center">
