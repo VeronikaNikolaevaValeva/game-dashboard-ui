@@ -43,4 +43,4 @@ jobs:
         with:
             app-name: 'game-dashboard'
             publish-profile: ${{ secrets.AZURE_APPSERVICE_PUBLISHPROFILE }}
-            images: 'index.docker.io/${{ secrets.DOCKERHUB_USERNAME }}/game-dashboard:${{ github.sha }}'
+            images: 'index.docker.io/${{ secrets.DOCKER_USERNAME }}/game-dashboard:${{ github.sha }}'
