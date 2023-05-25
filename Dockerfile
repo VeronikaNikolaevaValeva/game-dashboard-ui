@@ -1,5 +1,5 @@
 # Declare the base image
-FROM node:16-alpine AS build
+FROM node:18-alpine AS build
 # 1. copy package.json and package-lock.json to /app dir
 RUN mkdir /app
 COPY package*.json ./app/
