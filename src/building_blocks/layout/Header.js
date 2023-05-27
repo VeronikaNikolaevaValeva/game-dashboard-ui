@@ -14,7 +14,7 @@ function Header(){
         <>
         <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">QUIZ</Navbar.Brand>
+          <Navbar.Brand href="#home">QUIZ QUEST</Navbar.Brand>
           <Nav className="justify-content-end">
           {!isAuthenticated && (
             <Nav.Item>

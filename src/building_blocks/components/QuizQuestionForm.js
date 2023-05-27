@@ -4,16 +4,12 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
-import Loading from "./Loading"
 
 function QuizQuestionsForm(props) {
   const [questions, setQuestions] = useState([' ']);
   const [returnData, setReturnData] = useState([' ']);
   const [givenAnswers, setGivenAnswers] = useState([' ']);
-  const [loading, setLoading] = useState(false);
-  if(loading){
-    return <Loading />;
-  }
+
   if(questions[0] == [' '] ){
     const qData = []
     const returndata = []
@@ -67,7 +63,6 @@ function QuizQuestionsForm(props) {
   }
 
   function submitQuestions(){
-    setLoading(true);
     var data = JSON.stringify({
       "accountEmailAddress": props.accountEmailAddress,
       "category": props.category,
