@@ -138,7 +138,7 @@ function HomePage() {
                 class="d-flex justify-content-center"
                 style={{ paddingTop: "1rem" }}
               >
-                <h1>QUIZ GAME</h1>
+                <h1>QUIZ QUEST</h1>
               </Card.Title>
               <Card.Body>
                 <QuizGameForm />

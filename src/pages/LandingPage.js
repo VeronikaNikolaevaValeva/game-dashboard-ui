@@ -14,7 +14,7 @@ function LandingPage() {
               <Card.Title
                 class="d-flex justify-content-center"
                 style={{ paddingTop: "5rem", paddingBottom: "5rem" }}>
-                <h1>QUIZ GAME</h1>
+                <h1>QUIZ QUEST</h1>
               </Card.Title>
             </Card>
           </Row>
