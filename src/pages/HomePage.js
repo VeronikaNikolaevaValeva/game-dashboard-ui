@@ -58,7 +58,6 @@ function HomePage() {
     const token = await getAccessTokenSilently();
     await userManager.deleteUser(user.nickname, user.email, token).then(response=>{
       console.log(response);
-      } 
     });
   }
   async function GameOptionsCallBack (gameOptionsData){
