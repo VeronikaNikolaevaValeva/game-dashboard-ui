@@ -5,6 +5,7 @@ import QuizCorrectAnswerForm from "../building_blocks/components/QuizCorrectAnsw
 import React, { useState, Component, useEffect } from 'react';
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Alert from 'react-bootstrap/Alert';
 import qandamanager from "../managers/q-and-a-manager";
