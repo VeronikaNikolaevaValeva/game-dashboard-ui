@@ -10,6 +10,7 @@ import Alert from 'react-bootstrap/Alert';
 import qandamanager from "../managers/q-and-a-manager";
 import userManager from "../managers/user-manager";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Button } from "react-bootstrap/lib/InputGroup";
 
 
 function HomePage() {
@@ -53,7 +54,13 @@ function HomePage() {
     populateCategories();
   }, []);
   
-  
+  async function DeleteUserData (){
+    const token = await getAccessTokenSilently();
+    await userManager.deleteUser(user.nickname, user.email, token).then(response=>{
+      console.log(response);
+      } 
+    });
+  }
   async function GameOptionsCallBack (gameOptionsData){
     const token = await getAccessTokenSilently();
     await qandamanager.getQuizQuestions(gameOptionsData, token).then(response=>{
@@ -134,6 +141,7 @@ function HomePage() {
             <ShowResultAlert />
             <ProcessedAccountAlert />
             <Card className="bg-dark text-white" border="primary" style={{ height: "100%", width: "100%" }}>
+              <Button onClick={DeleteUserData}>Delete Account Info</Button>
               <Card.Title
                 class="d-flex justify-content-center"
                 style={{ paddingTop: "1rem" }}
