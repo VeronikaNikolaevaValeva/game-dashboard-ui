@@ -35,7 +35,7 @@ function HomePage() {
        setProcessedAccount(response); setShowAccountAlert(true)
       });
     setAccountEmailAddress(user.email);
-    console.log(user);
+    console.log(user.sub);
     await qandamanager.getQuizGameCategories(token).then(response=>{
       if(categories[0]==[' ']){
         setCategories(response);
