@@ -16,13 +16,14 @@ const getUser = async (accessToken) => {
       });
 };
 
-const processUser = async (username, emailAddress, token) => {
+const processUser = async (sub, username, emailAddress, token) => {
     var config = {
         method: 'post',
         url: baseUrl + '/GameAccount/ProcessUser',
         headers: {"Content-Type": "application/json",
                   "Authorization": `Bearer ${token}` },
-        data:  {  "username": username,
+        data:  {  "sub": sub,
+                  "username": username,
                   "emailAddress": emailAddress }
         };          
     
