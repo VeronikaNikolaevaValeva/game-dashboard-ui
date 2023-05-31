@@ -13,7 +13,6 @@ const getUser = async (accessToken) => {
         return response.data;
       })
       .catch(function (error) {
-          console.log(error);
       });
 };
 
@@ -31,7 +30,6 @@ const processUser = async (username, emailAddress, token) => {
         return response.data;
      })
     .catch(function (error) {
-        console.log(error);
     });   
  };      
 

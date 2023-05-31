@@ -13,7 +13,6 @@ const baseUrl = "https://gamelogicservice.azurewebsites.net/api";
       return response.data;
     })
     .catch(function (error) {
-        console.log(error);
     });
   };
 
@@ -30,7 +29,6 @@ const getGameOptionsByAccountEmailAddress = async (accountEmailAddress, token) =
       return response.data;
     })
     .catch(function (error) {
-      console.log(error);
     });
   };
 
@@ -49,7 +47,6 @@ const getQuizQuestions = async (data, token) => {
     return response.data;
   })
   .catch(function (error) {
-    console.log(error);
   });
   };
 
@@ -67,7 +64,7 @@ const submitQuizQuestions = async (data, token) => {
     return response.data;
   })
   .catch(function (error) {
-    console.log(error);
+    
   });
 };
 

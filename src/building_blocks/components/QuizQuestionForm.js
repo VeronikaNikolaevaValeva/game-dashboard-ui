@@ -69,7 +69,6 @@ function QuizQuestionsForm(props) {
       "correctAnswers": returnData,
       "givenAnswers": givenAnswers
     });
-    console.log(data);
     props.handleQuestionCallback(data, givenAnswers);
   }
   

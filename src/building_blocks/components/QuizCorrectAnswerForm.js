@@ -29,7 +29,6 @@ function QuizCorrectAnswerForm(props) {
         }
     }
     setData(propData)
-    console.log(propData)
   }
   function ShowCorrectAnswer(item){
     if(item.item[1] != item.item[2]){
