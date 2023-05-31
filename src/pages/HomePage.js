@@ -30,12 +30,11 @@ function HomePage() {
   const populateCategories = async () => {
     const token = await getAccessTokenSilently();
     await userManager.getUser(token);
-    await userManager.processUser(user.nickname, user.email, token)
+    await userManager.processUser(user.sub, user.nickname, user.email, token)
     .then(response=>{
        setProcessedAccount(response); setShowAccountAlert(true)
       });
     setAccountEmailAddress(user.email);
-    console.log(user.sub);
     await qandamanager.getQuizGameCategories(token).then(response=>{
       if(categories[0]==[' ']){
         setCategories(response);
