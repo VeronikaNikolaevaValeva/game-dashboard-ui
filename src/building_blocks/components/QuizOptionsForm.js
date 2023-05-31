@@ -12,17 +12,17 @@ function QuizOptionsForm(props) {
   const [difficulty, setDifficulty] = useState("easy");
   const [preferences, setPreferences] = useState(false);
 
- const populateGameOptions = async () => {
-    if(props.preDefinedGameOptions != " "){
-        setAmount(props.preDefinedGameOptions.amount);
-        setDifficulty(props.preDefinedGameOptions.difficulty);
-        setPreferences(true);
-    }
-  };
+//  const populateGameOptions = async () => {
+//     if(props.preDefinedGameOptions != " "){
+//         setAmount(props.preDefinedGameOptions.amount);
+//         setDifficulty(props.preDefinedGameOptions.difficulty);
+//         setPreferences(true);
+//     }
+//   };
 
-  useEffect(() => {
-    populateGameOptions();
-  }, []);
+//   useEffect(() => {
+//     populateGameOptions();
+//   }, []);
 
   const handleCategoryList = () => {
     const list2 = []

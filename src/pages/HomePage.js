@@ -41,12 +41,12 @@ function HomePage() {
         setQuestionMode(false);
       }     
     });
-    await qandamanager.getGameOptionsByAccountEmailAddress(user.email, token)
-    .then(response=>{
-      if(gameOptions==" "){
-        setGameOptions(response);
-      }     
-    });
+    // await qandamanager.getGameOptionsByAccountEmailAddress(user.email, token)
+    // .then(response=>{
+    //   if(gameOptions==" "){
+    //     setGameOptions(response);
+    //   }     
+    // });
   };
 
   useEffect(() => {
@@ -102,7 +102,7 @@ function HomePage() {
     else if(correctAnswersMode){
       return <QuizCorrectAnswerForm handleCorrectAnswersCallback= {CorrectAnswersCallBack} questions={questions} givenAnswers={givenAnswers}/>;
     }
-    return <QuizOptionsForm handleOptionsCallback={GameOptionsCallBack} preDefinedGameOptions={gameOptions} handleGameCategorySet={GameCategoryCallBack} categories={categories} accountEmailAddress={accountEmailAddress}/>;
+    return <QuizOptionsForm handleOptionsCallback={GameOptionsCallBack} handleGameCategorySet={GameCategoryCallBack} categories={categories} accountEmailAddress={accountEmailAddress}/>;
   }
 
   function ShowResultAlert(){
