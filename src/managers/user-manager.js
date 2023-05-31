@@ -22,10 +22,11 @@ const processUser = async (sub, username, emailAddress, token) => {
         url: baseUrl + '/GameAccount/ProcessUser',
         headers: {"Content-Type": "application/json",
                   "Authorization": `Bearer ${token}` },
-        data:  {  "UserId": sub,
+        data:  {  "userId": sub,
                   "username": username,
                   "emailAddress": emailAddress }
-        };          
+        }; 
+    console.log(data);        
     return await axios(config).then(function (response) {
         return response.data;
      })
