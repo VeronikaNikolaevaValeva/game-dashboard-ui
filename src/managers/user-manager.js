@@ -25,8 +25,23 @@ const processUser = async (sub, username, emailAddress, token) => {
         data:  {  "userId": sub,
                   "username": username,
                   "emailAddress": emailAddress }
-        }; 
-    console.log(config);        
+        };       
+    return await axios(config).then(function (response) {
+        return response.data;
+     })
+    .catch(function (error) {
+    });   
+ };   
+
+ const deleteUser = async (username, emailAddress, token) => {
+    var config = {
+        method: 'post',
+        url: baseUrl + '/GameAccount/DeleteUser',
+        headers: {"Content-Type": "application/json",
+                  "Authorization": `Bearer ${token}` },
+        data:  {  "username": username,
+                  "emailAddress": emailAddress }
+        };       
     return await axios(config).then(function (response) {
         return response.data;
      })
@@ -37,5 +52,6 @@ const processUser = async (sub, username, emailAddress, token) => {
 
 export default {
     getUser,
-    processUser
+    processUser,
+    deleteUser
 };   

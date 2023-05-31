@@ -4,11 +4,21 @@ import Navbar from 'react-bootstrap/Navbar';
 import React, { Component }  from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import userManager from '../../managers/user-manager';
+const { isAuthenticated, loginWithRedirect, logout, user, token } = useAuth0();
+
 
 function Header(){ 
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const openInNewTab = (url) => {
     window.open(url, '_blank', 'noreferrer');
+  };
+
+  const deleteUser = async () => {
+    const token = await getAccessTokenSilently();
+    await userManager.deleteUser(user.nickname, user.email, token)
+    .then(response=>{
+       console.log(response)
+      });
+    
   };
   return (
         <>
@@ -40,6 +50,15 @@ function Header(){
               </Nav.Link>
             </Nav.Item>
           )}
+          {isAuthenticated && (
+          <Nav.Item>
+             <Nav.Link>
+               <button onClick={}>
+                 Remove Account
+               </button>
+             </Nav.Link>
+           </Nav.Item>
+           )}
           </Nav>
         </Container>
       </Navbar>
