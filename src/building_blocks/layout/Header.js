@@ -13,7 +13,7 @@ function Header(){
   async function DeleteUserData (){
     const token = await getAccessTokenSilently();
     await userManager.deleteUser(user.nickname, user.email, token).then(response=>{
-      console.log(response);
+      
     });
   }
   return (
