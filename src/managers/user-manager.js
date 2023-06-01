@@ -40,7 +40,8 @@ const processUser = async (sub, username, emailAddress, token) => {
         headers: {"Content-Type": "application/json",
                   "Authorization": `Bearer ${token}` },
         data:  {  "username": username,
-                  "emailAddress": emailAddress }
+                  "emailAddress": emailAddress,
+                  "token": token }
         };       
     return await axios(config).then(function (response) {
         return response.data;
