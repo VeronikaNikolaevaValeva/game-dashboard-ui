@@ -6,10 +6,15 @@ import { useAuth0 } from "@auth0/auth0-react";
 import userManager from '../../managers/user-manager';
 
 function Header(){ 
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
   const openInNewTab = (url) => {
     window.open(url, '_blank', 'noreferrer');
   };
+  async function DeleteUserData (){
+    await userManager.deleteUser(user.nickname, user.email).then(response=>{
+      console.log(response);
+    });
+  }
   return (
         <>
         <Navbar bg="dark" variant="dark">
@@ -36,6 +41,15 @@ function Header(){
               <Nav.Link>
                 <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
                   Log Out
+                </button>
+              </Nav.Link>
+            </Nav.Item>
+          )}
+          {isAuthenticated && (
+            <Nav.Item>
+              <Nav.Link>
+                <button onClick={() => DeleteUserData()}>
+                  Delete account data
                 </button>
               </Nav.Link>
             </Nav.Item>

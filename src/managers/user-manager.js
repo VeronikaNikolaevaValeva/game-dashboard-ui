@@ -33,15 +33,14 @@ const processUser = async (sub, username, emailAddress, token) => {
     });   
  };   
 
- const deleteUser = async (username, emailAddress, token) => {
+ const deleteUser = async (username, emailAddress) => {
     var config = {
         method: 'post',
         url: baseUrl + '/GameAccount/DeleteUser',
         headers: {"Content-Type": "application/json",
                   "Authorization": `Bearer ${token}` },
         data:  {  "username": username,
-                  "emailAddress": emailAddress,
-                  "token": token }
+                  "emailAddress": emailAddress}
         };       
     return await axios(config).then(function (response) {
         return response.data;

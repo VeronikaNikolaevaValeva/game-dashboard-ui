@@ -55,8 +55,7 @@ function HomePage() {
   }, []);
   
   async function DeleteUserData (){
-    const token = await getAccessTokenSilently();
-    await userManager.deleteUser(user.nickname, user.email, token).then(response=>{
+    await userManager.deleteUser(user.nickname, user.email).then(response=>{
       console.log(response);
     });
   }
@@ -140,7 +139,7 @@ function HomePage() {
             <ShowResultAlert />
             <ProcessedAccountAlert />
             <Card className="bg-dark text-white" border="primary" style={{ height: "100%", width: "100%" }}>
-              <Button onClick={DeleteUserData}>Delete Account Info</Button>
+              {/* <Button onClick={DeleteUserData}>Delete Account Info</Button> */}
               <Card.Title
                 class="d-flex justify-content-center"
                 style={{ paddingTop: "1rem" }}
