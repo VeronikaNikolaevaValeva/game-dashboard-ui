@@ -6,12 +6,13 @@ import { useAuth0 } from "@auth0/auth0-react";
 import userManager from '../../managers/user-manager';
 
 function Header(){ 
-  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, getAccessTokenSilently, user } = useAuth0();
   const openInNewTab = (url) => {
     window.open(url, '_blank', 'noreferrer');
   };
   async function DeleteUserData (){
-    await userManager.deleteUser(user.nickname, user.email).then(response=>{
+    const token = await getAccessTokenSilently();
+    await userManager.deleteUser(user.nickname, user.email, token).then(response=>{
       console.log(response);
     });
   }

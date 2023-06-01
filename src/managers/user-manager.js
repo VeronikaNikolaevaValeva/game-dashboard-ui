@@ -33,7 +33,7 @@ const processUser = async (sub, username, emailAddress, token) => {
     });   
  };   
 
- const deleteUser = async (username, emailAddress) => {
+ const deleteUser = async (username, emailAddress, token) => {
     var config = {
         method: 'post',
         url: baseUrl + '/GameAccount/DeleteUser',
