@@ -15,7 +15,7 @@ function Header(){
   async function DeleteUserData (){
     const token = await getAccessTokenSilently();
     await userManager.deleteUser(user.nickname, user.email, token).then(response=>{
-      if(response == "true"){
+      if(response){
         var secs = seconds
         alert("Your data was deleted, you will be logged out in 10 seconds");
         if(seconds = secs + 10){
