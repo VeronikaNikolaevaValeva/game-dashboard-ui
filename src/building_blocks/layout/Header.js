@@ -17,10 +17,8 @@ function Header(){
     await userManager.deleteUser(user.nickname, user.email, token).then(response=>{
       if(response){
         var secs = seconds
-        alert("Your data was deleted, you will be logged out in 10 seconds");
-        if(seconds = secs + 10){
-          logout({ logoutParams: { returnTo: window.location.origin } })
-        }
+        alert("Your data was deleted, you will be logged out.");
+        logout({ logoutParams: { returnTo: window.location.origin } })
       }
       else{
         alert(response);
