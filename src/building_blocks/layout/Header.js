@@ -7,13 +7,24 @@ import userManager from '../../managers/user-manager';
 
 function Header(){ 
   const { isAuthenticated, loginWithRedirect, logout, getAccessTokenSilently, user } = useAuth0();
+  const { seconds } = useStopwatch({ autoStart: true });
   const openInNewTab = (url) => {
     window.open(url, '_blank', 'noreferrer');
   };
   async function DeleteUserData (){
     const token = await getAccessTokenSilently();
     await userManager.deleteUser(user.nickname, user.email, token).then(response=>{
-    console.log(response); 
+      if(response == "true"){
+        var secs = seconds
+        alert("Your data was deleted, you will be logged out in 10 seconds");
+        if(seconds = secs + 10){
+          logout({ logoutParams: { returnTo: window.location.origin } })
+        }
+      }
+      else{
+        alert(response);
+      }
+
     });
   }
   return (
