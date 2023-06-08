@@ -13,7 +13,7 @@ function Header(){
   async function DeleteUserData (){
     const token = await getAccessTokenSilently();
     await userManager.deleteUser(user.nickname, user.email, token).then(response=>{
-      
+    console.log(response); 
     });
   }
   return (
@@ -29,9 +29,6 @@ function Header(){
               </Nav.Link>
             </Nav.Item>
           )}
-          <Nav.Item>
-            <Nav.Link href="/">Home</Nav.Link>
-          </Nav.Item>
           <Nav.Item>
             <Nav.Link onClick={() => openInNewTab('https://game-scoreboard.azurewebsites.net/')}>
             Scoreboard
