@@ -1,2 +1,2 @@
 # Game Dashboard UI
-The Game UI is an interface used by the users to authenticate themselves and enter the game. The players are able to set their game preferences and start the game.
+Welcome to the Game Dashboard UI repository! This project features a dynamic and visually appealing dashboard user interface designed for gaming applications. The dashboard provides an overview of key gaming statistics, creating an immersive experience for users.
